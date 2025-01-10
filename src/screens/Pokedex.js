@@ -15,8 +15,7 @@ export default function Pokedex() {
   const loadPokemons = async () => {
     try {
       const response = await getPokemonsApi(nextUrl);
-      setNextUrl(response.next);
-      
+
       const pokemonsArray = [];
       for await (const pokemonItem of response.results) {
         //console.log(pokemonItem)
@@ -29,8 +28,8 @@ export default function Pokedex() {
           image: pokemonDetails.sprites.other['home'].front_default,
         })
       }
-
       setPokemons([...pokemons, ...pokemonsArray])
+      setNextUrl(response.next);
     } catch (error) {
       console.log(error)
     }
