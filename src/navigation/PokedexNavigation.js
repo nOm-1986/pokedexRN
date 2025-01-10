@@ -1,6 +1,7 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import PokedexScreen from '../screens/Pokedex';
+import PokemonScreen from '../screens/Pokemon'
 
 const Stack = createStackNavigator();
 
@@ -13,6 +14,7 @@ export default function PokedexNavigation() {
                 options={{ title: "", headerShown: false}}
                 
             />
+            <Stack.Screen name='Pokemon' component={PokemonScreen}/>
         </Stack.Navigator>
     )
 }
