@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     card: {
         flex: 1,
         height: 120,
-        width: 165,
+        width: 155,
         margin: 4
     },
     spacing: {
