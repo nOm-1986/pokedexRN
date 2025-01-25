@@ -2,6 +2,7 @@ import { ScrollView } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { getPokemonDetailsApi} from '../api/pokemon'
 import Header from '../components/Pokemon/Header';
+import Types from '../components/Pokemon/Type'
 
 export default function Pokemon(props) {
   const {route: { params }, navigation } = props;
@@ -28,6 +29,7 @@ export default function Pokemon(props) {
         image={pokemon.sprites.other['home'].front_default}
         type={pokemon.types[0].type.name}
       />
+      <Types types={pokemon.types}/>
     </ScrollView>
   )
 }
